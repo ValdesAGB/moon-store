@@ -1,0 +1,9 @@
+.ms-shopping-price {
+	position: absolute;
+	background-color: #31b472;
+	color: white;
+	padding: 15px;
+	right: 0;
+	top: 0;
+	font-weight: 500;
+}

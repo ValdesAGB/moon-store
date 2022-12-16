@@ -3,7 +3,9 @@ import { siteName, welcomeMessage } from '../../data'
 import moonstore from '../../assets/moonstore.png'
 import Cart from '../Cart'
 
-function Header2() {
+function Header2({ cart, setCart, total }) {
+  const chemise = 8
+  total = `${cart * chemise} €`
   return (
     <section
       className="row text-white border-top"
@@ -35,11 +37,13 @@ function Header2() {
 
         <div className="col-5 ps-5 row d-flex justify-content-end">
           <div className="col-2 mx-2">
-            <Cart />
+            <Cart cart={cart} setCart={setCart} total={total} />
           </div>
           <div className="col">
             <div>Panier</div>
-            <div>3 éléments - $250.00</div>
+            <div>
+              {cart} éléments - {total}
+            </div>
           </div>
         </div>
       </div>

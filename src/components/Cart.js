@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart() {
+function Cart({ cart, setCart, total }) {
   return (
     <React.Fragment>
       <i
@@ -10,7 +10,7 @@ function Cart() {
       ></i>
 
       <div
-        className="modal fade"
+        className="modal fade text-black"
         id="exampleModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
@@ -32,14 +32,15 @@ function Cart() {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body text-black">{cart}</div>
             <div className="modal-footer">
+              <h5 className="fw-light">Total : {total} </h5>
               <button
                 type="button"
                 className="btn btn-secondary"
-                data-bs-dismiss="modal"
+                onClick={() => setCart(0)}
               >
-                Close
+                Vider le panier
               </button>
             </div>
           </div>
