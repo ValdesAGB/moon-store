@@ -32,13 +32,23 @@ function Cart({ cart, setCart, total }) {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body text-black">{cart}</div>
+            {cart.length > 0 ? (
+              <div className="modal-body text-black">
+                {cart.map(({ name, price, amount }, index) => (
+                  <div key={`${name}-${index}`}>
+                    {name} : {price} € x {amount}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="modal-body text-black">Votre panier est vide</div>
+            )}
             <div className="modal-footer">
-              <h5 className="fw-light">Total : {total} </h5>
+              <h5 className="fw-light">Total : {total} € </h5>
               <button
                 type="button"
-                className="btn btn-secondary"
-                onClick={() => setCart(0)}
+                className="btn btn-danger fw-light"
+                onClick={() => setCart([])}
               >
                 Vider le panier
               </button>

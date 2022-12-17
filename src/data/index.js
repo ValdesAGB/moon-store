@@ -41,7 +41,7 @@ export const clothes = [
 
   {
     id: 'F2',
-    name: 'Chemise veste',
+    name: 'Chemise veste pour femme',
     categorie: 'Chemise',
     cut: 'Les tailles disponibles : ',
     price: 20,
@@ -49,6 +49,18 @@ export const clothes = [
     sex: 'feminine',
     forWho: 'Adult',
     cover: ChemiseFemme2,
+  },
+
+  {
+    id: 'S-H1 ',
+    name: 'Short fiesta',
+    categorie: 'Short',
+    cut: 'Les tailles disponibles : ',
+    price: 45,
+    onSale: false,
+    sex: 'male',
+    forWho: 'All',
+    cover: ShortHomme1,
   },
 
   {
@@ -77,7 +89,7 @@ export const clothes = [
 
   {
     id: 'M3',
-    name: 'Chemise veste',
+    name: 'Chemise veste pour homme',
     categorie: 'Chemise',
     cut: 'Les tailles disponibles : ',
     price: 45,
@@ -97,18 +109,6 @@ export const clothes = [
     sex: 'feminine',
     forWho: 'Adult',
     cover: ChemiseFemme1,
-  },
-
-  {
-    id: 'S-H1 ',
-    name: 'Short fiesta',
-    categorie: 'Short',
-    cut: 'Les tailles disponibles : ',
-    price: 45,
-    onSale: false,
-    sex: 'male',
-    forWho: 'All',
-    cover: ShortHomme1,
   },
 
   {

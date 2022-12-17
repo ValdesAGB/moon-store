@@ -4,8 +4,16 @@ import moonstore from '../../assets/moonstore.png'
 import Cart from '../Cart'
 
 function Header2({ cart, setCart, total }) {
-  const chemise = 8
-  total = `${cart * chemise} €`
+  total = cart.reduce(
+    (acc, plantType) => acc + plantType.amount * plantType.price,
+    0
+  )
+
+  let amountClothe = cart.reduce(
+    (acc, clotheItem) => acc + clotheItem.amount,
+    0
+  )
+
   return (
     <section
       className="row text-white border-top"
@@ -42,7 +50,7 @@ function Header2({ cart, setCart, total }) {
           <div className="col">
             <div>Panier</div>
             <div>
-              {cart} éléments - {total}
+              {amountClothe} élément(s) - {total} €
             </div>
           </div>
         </div>
