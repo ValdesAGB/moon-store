@@ -5,7 +5,7 @@ function Navbarre() {
   return (
     <React.Fragment>
       <section
-        className="row text-white fw-light "
+        className="row text-white fw-light d-none d-md-flex"
         style={{ backgroundColor: '#2197f2' }}
       >
         <ul className="list-inline d-flex justify-content-evenly gy-2">

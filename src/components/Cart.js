@@ -18,14 +18,44 @@ function Cart({ cart, setCart, total }) {
       }
     }
   }
+  /* let nameClothe = cart.reduce(
+    (acc, clotheItem) =>
+      acc +
+      ' ' +
+      clotheItem.name +
+      ' ' +
+      clotheItem.price +
+      '€' +
+      ' x ' +
+      clotheItem.amount,
+    []
+  )
 
+  function orderCart() {
+    alert(`Commande de : ${nameClothe} `)
+    //setCart([])
+  }*/
+  let amountClothe = cart.reduce(
+    (acc, clotheItem) => acc + clotheItem.amount,
+    0
+  )
   return (
     <React.Fragment>
       <i
-        className="bi bi-cart4 fs-2 btn text-white p-0"
+        className="bi bi-cart4 fs-2 btn text-white p-0 d-md-flex d-none "
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       ></i>
+      <div
+        className="btn btn-primary fw-light d-md-none p-1"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        <div>Panier</div>
+        <div>
+          {amountClothe} élément (s) - {total} €
+        </div>
+      </div>
 
       <div
         className="modal fade text-black"
@@ -57,9 +87,9 @@ function Cart({ cart, setCart, total }) {
                     <div className="col-10">
                       {name} : {price} € x {amount}
                     </div>
-                    <div className=" col-1">
+                    <div className=" col-2">
                       <i
-                        className="bi bi-x-lg btn text-danger fs-5"
+                        className="bi bi-x-lg btn text-danger"
                         onClick={() => withdrawCart(name, price)}
                       ></i>
                     </div>
@@ -70,6 +100,17 @@ function Cart({ cart, setCart, total }) {
               <div className="modal-body text-black">Votre panier est vide</div>
             )}
             <div className="modal-footer ">
+              {cart.length > 0 ? (
+                <span>
+                  <button
+                    className="btn btn-success fw-light"
+                    //onClick={() => orderCart()}
+                  >
+                    Passer la commande
+                  </button>
+                </span>
+              ) : null}
+
               <span className="mx-4">
                 <h5 className="fw-light">Total : {total} € </h5>
               </span>
