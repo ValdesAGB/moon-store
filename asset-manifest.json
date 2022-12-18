@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/moon-store/static/css/main.3e3efb56.css",
+    "main.js": "/moon-store/static/js/main.f5a7e2be.js",
+    "static/media/ShortHomme2.jpg": "/moon-store/static/media/ShortHomme2.5e9549afb4d9310a160e.jpg",
+    "static/media/ShortFemme3.jpg": "/moon-store/static/media/ShortFemme3.05513b3e3d56fd657434.jpg",
+    "static/media/RobeFemme3.jpg": "/moon-store/static/media/RobeFemme3.b8b05d91799c21c0fef3.jpg",
+    "static/media/ChemiseHomme1.jpg": "/moon-store/static/media/ChemiseHomme1.4625dd97cd0bbf795fd6.jpg",
+    "static/media/ShortFemme1.jpg": "/moon-store/static/media/ShortFemme1.4199b432021ea1d4563c.jpg",
+    "static/media/ChemiseHomme3.jpg": "/moon-store/static/media/ChemiseHomme3.5032361f7bbbb4599474.jpg",
+    "static/media/ChemiseFemme1.jpg": "/moon-store/static/media/ChemiseFemme1.79de7f036f493e73de7d.jpg",
+    "static/media/ChemiseFemme2.jpg": "/moon-store/static/media/ChemiseFemme2.d597a79957c28dce875e.jpg",
+    "static/media/shotEnfant.jpg": "/moon-store/static/media/shotEnfant.e53a548128c735a6cf7e.jpg",
+    "static/media/ShortHomme1.png": "/moon-store/static/media/ShortHomme1.ccf73a8e9c9baac4acc1.png",
+    "static/media/RobeFemme2.jpg": "/moon-store/static/media/RobeFemme2.626cc4be5aeaca87268b.jpg",
+    "static/media/ChemiseHomme2.jpg": "/moon-store/static/media/ChemiseHomme2.a41dc2fcec167c161c47.jpg",
+    "static/media/ShortFemme2.jpg": "/moon-store/static/media/ShortFemme2.9e9c5ce98e5c96e3fc13.jpg",
+    "static/media/moonstore.png": "/moon-store/static/media/moonstore.e26ad5f78b461d607615.png",
+    "index.html": "/moon-store/index.html",
+    "main.3e3efb56.css.map": "/moon-store/static/css/main.3e3efb56.css.map",
+    "main.f5a7e2be.js.map": "/moon-store/static/js/main.f5a7e2be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e3efb56.css",
+    "static/js/main.f5a7e2be.js"
+  ]
+}
