@@ -44,7 +44,6 @@ function Cart({ cart, setCart, total }) {
     let boutonConfirmer = document.getElementById('boutonConfirmer')
     if (true) {
       boutonConfirmer.setAttribute('data-bs-dismiss', 'modal')
-      console.log(boutonConfirmer.getAttribute('data-bs-dismiss'))
     }
   }
 
@@ -54,10 +53,11 @@ function Cart({ cart, setCart, total }) {
     } else {
       if (!userMail.includes('@')) {
         alert(`Votre mail n'est pas valide. Veuillez le mettre à jour.`)
+      } else {
+        swal('Commande effectuée!', 'Vérifiez votre mail', 'success')
+        dataBSDismiss(true)
+        setCart([])
       }
-      swal('Commande effectuée!', 'Vérifiez votre mail', 'success')
-      dataBSDismiss(true)
-      setCart([])
       /* emailjs
         .sendForm('service_4tuyxzs', 'template_yoplv1i', e, 'A1mdZJ2wcgjMn7M5O')
         .then(
@@ -153,7 +153,6 @@ function Cart({ cart, setCart, total }) {
           </div>
         </div>
       </div>
-
       {/* deuxieme div de modal ( confirmer la commande)*/}
       <div
         className="modal fade"
@@ -240,7 +239,7 @@ function Cart({ cart, setCart, total }) {
       </div>
 
       {/* dernier div de modal ( commande effectué)
-       <div
+      <div
         className="modal fade text-dark"
         id="exampleModalToggle3"
         aria-hidden="true"
@@ -266,7 +265,6 @@ function Cart({ cart, setCart, total }) {
           </div>
         </div>
       </div>*/}
-
       {/* boutton pour enclencher le premier modal*/}
       <i
         className="bi bi-cart4 fs-2 btn text-white p-0 d-md-flex d-none "
