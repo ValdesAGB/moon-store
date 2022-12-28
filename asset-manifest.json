@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/moon-store/static/css/main.3e3efb56.css",
-    "main.js": "/moon-store/static/js/main.2049bb5c.js",
+    "main.js": "/moon-store/static/js/main.7434ffb5.js",
     "static/media/ShortHomme2.jpg": "/moon-store/static/media/ShortHomme2.5e9549afb4d9310a160e.jpg",
     "static/media/ShortFemme3.jpg": "/moon-store/static/media/ShortFemme3.05513b3e3d56fd657434.jpg",
     "static/media/RobeFemme3.jpg": "/moon-store/static/media/RobeFemme3.b8b05d91799c21c0fef3.jpg",
@@ -18,10 +18,10 @@
     "static/media/moonstore.png": "/moon-store/static/media/moonstore.e26ad5f78b461d607615.png",
     "index.html": "/moon-store/index.html",
     "main.3e3efb56.css.map": "/moon-store/static/css/main.3e3efb56.css.map",
-    "main.2049bb5c.js.map": "/moon-store/static/js/main.2049bb5c.js.map"
+    "main.7434ffb5.js.map": "/moon-store/static/js/main.7434ffb5.js.map"
   },
   "entrypoints": [
     "static/css/main.3e3efb56.css",
-    "static/js/main.2049bb5c.js"
+    "static/js/main.7434ffb5.js"
   ]
 }
