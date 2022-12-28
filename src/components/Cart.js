@@ -1,8 +1,14 @@
+//import { Customer } from 'fedapay'
 import React, { useState } from 'react'
 //import emailjs from '@emailjs/browser'
-import swal from 'sweetalert'
+//import swal from 'sweetalert'
 
 function Cart({ cart, setCart, total }) {
+  const [userMail, setUserMail] = useState('')
+  const [userName, setUserName] = useState('')
+  //const [userCommande, setUserCommande] = useState(nameClothe)
+  //const [dataBSDismiss, setDataBsDismiss] = useState(true)
+
   // fonction pour retirer un éléments du panier
   function withdrawCart(name, price) {
     const currentClothesAmount = cart.find((cloth) => cloth.name === name)
@@ -27,10 +33,10 @@ function Cart({ cart, setCart, total }) {
     []
   )
 
-  const [userMail, setUserMail] = useState('')
-  const [userName, setUserName] = useState('')
-  //const [userCommande, setUserCommande] = useState(nameClothe)
-  //const [dataBSDismiss, setDataBsDismiss] = useState(true)
+  let amountClothe = cart.reduce(
+    (acc, clotheItem) => acc + clotheItem.amount,
+    0
+  )
 
   function handleChangeUserMail(event) {
     setUserMail(event.target.value)
@@ -40,23 +46,23 @@ function Cart({ cart, setCart, total }) {
     setUserName(event.target.value)
   }
 
-  function dataBSDismiss() {
+  function modal2Attribute() {
     let boutonConfirmer = document.getElementById('boutonConfirmer')
     if (true) {
-      boutonConfirmer.setAttribute('data-bs-dismiss', 'modal')
+      boutonConfirmer.setAttribute('data-bs-target', '#exampleModalToggle3')
+      boutonConfirmer.setAttribute('data-bs-toggle', 'modal')
     }
   }
 
-  function userCommand() {
+  function checkCommande() {
     if (userMail === '' || userName === '') {
       alert('Veuillez entrez votre nom prénom et votre mail')
     } else {
       if (!userMail.includes('@')) {
         alert(`Votre mail n'est pas valide. Veuillez le mettre à jour.`)
       } else {
-        swal('Commande effectuée!', 'Vérifiez votre mail', 'success')
-        dataBSDismiss(true)
-        setCart([])
+        // swal('Commande effectuée!', 'Vérifiez votre mail', 'success')
+        modal2Attribute(true)
       }
       /* emailjs
         .sendForm('service_4tuyxzs', 'template_yoplv1i', e, 'A1mdZJ2wcgjMn7M5O')
@@ -71,10 +77,6 @@ function Cart({ cart, setCart, total }) {
     }
   }
 
-  let amountClothe = cart.reduce(
-    (acc, clotheItem) => acc + clotheItem.amount,
-    0
-  )
   return (
     <React.Fragment>
       {/* premier div de modal ( panier)*/}
@@ -153,6 +155,7 @@ function Cart({ cart, setCart, total }) {
           </div>
         </div>
       </div>
+
       {/* deuxieme div de modal ( confirmer la commande)*/}
       <div
         className="modal fade"
@@ -165,7 +168,7 @@ function Cart({ cart, setCart, total }) {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
-                Confirmer la commande
+                Vérifier la commande
               </h1>
               <button
                 type="button"
@@ -218,13 +221,12 @@ function Cart({ cart, setCart, total }) {
             </div>
             <div className="modal-footer">
               <button
-                /*data-bs-target="#exampleModalToggle3"  data-bs-toggle="modal"*/
                 id="boutonConfirmer"
                 //data-bs-dismiss=""
                 className="btn btn-success fw-light"
-                onClick={userCommand}
+                onClick={checkCommande}
               >
-                Confirmer
+                Commande vérifiée
               </button>
               <button
                 className="btn btn-primary fw-light"
@@ -238,7 +240,7 @@ function Cart({ cart, setCart, total }) {
         </div>
       </div>
 
-      {/* dernier div de modal ( commande effectué)
+      {/*dernier div de modal ( commande effectuée)*/}
       <div
         className="modal fade text-dark"
         id="exampleModalToggle3"
@@ -250,7 +252,7 @@ function Cart({ cart, setCart, total }) {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
-                Commande effectué.
+                Passer la commande
               </h1>
               <button
                 type="button"
@@ -259,12 +261,57 @@ function Cart({ cart, setCart, total }) {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              Hide this modal and show the first with the button below.
+            <div className="modal-body  fs-4 fw-bold">
+              <span className="fw-light text-decoration-underline">
+                Montant à payer{' '}
+              </span>
+              : &nbsp;{total} €
+            </div>
+            <div className="modal-footer">
+              {/*<kkiapay-widget
+                amount={total}
+                key="595743368930419e3b3e9630f0510a50cecb8132"
+                //url="<url-vers-votre-logo>"
+                position="center"
+                sandbox="true"
+                data=""
+                callback="valdesagb.github.io/moon-store"
+              >
+                Payer
+              </kkiapay-widget>
+              <kkiapay-widget
+                sandbox="true"
+                amount={total}
+                key="595743368930419e3b3e9630f0510a50cecb8132"
+                callback="https://valdesagb.github.io/moon-store"
+              />*/}
+
+              <button
+                type="button"
+                className="btn btn-success"
+                data-bs-dismiss="modal"
+                onClick={() =>
+                  alert(
+                    "Cette option n'est malheureusement pas encore disponible. Nous vous conseillons de contacter le vendeur via l'un de ses réseaux situés au pied de page."
+                  )
+                }
+              >
+                Payer la commande
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onClick={() => setCart([])}
+              >
+                Annuler la commande
+              </button>
             </div>
           </div>
         </div>
-      </div>*/}
+      </div>
+
       {/* boutton pour enclencher le premier modal*/}
       <i
         className="bi bi-cart4 fs-2 btn text-white p-0 d-md-flex d-none "
@@ -434,4 +481,32 @@ export default Cart
                     role="button"
                   >
                     Open first modal
-                  </a>*/
+                  </a>
+
+   dernier div de modal ( commande effectué)
+      <div
+        className="modal fade text-dark"
+        id="exampleModalToggle3"
+        aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel2"
+        tabIndex="-1"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
+                Commande effectué.
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              Hide this modal and show the first with the button below.
+            </div>
+          </div>
+        </div>
+      </div>*/

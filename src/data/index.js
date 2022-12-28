@@ -195,3 +195,23 @@ export const clothes = [
     cover: ShortFemme3,
   },
 ]
+
+export const sellerNetworks = [
+  {
+    id: 'Whatsapp',
+    icone: 'fs-4  class="bi bi-whatsapp',
+    link: 'https://comeup.com/profil/valdesagb',
+  },
+
+  {
+    id: 'Instagram',
+    icone: 'fs-4 bi bi-instagram',
+    link: 'https://comeup.com/profil/valdesagb',
+  },
+
+  {
+    id: 'Snapchat',
+    icone: 'fs-4 bi bi-snapchat',
+    link: 'https://comeup.com/profil/valdesagb',
+  },
+]

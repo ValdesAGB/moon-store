@@ -33,8 +33,9 @@ function Header2({ cart, setCart, total }) {
 
       <div className="row col col-md-5 col-lg-6 col-xl-5 fw-light  d-flex align-items-center justify-content-end">
         <div className="text-white col-lg-5 col-xl-5 col-md-2 d-none d-lg-block">
-          <input type="search" className="col-7" />
+          <input type="search" className="col-7" disabled />
           <button
+            disabled
             type="submit"
             className="fw-light btn text-white btn-outline-secondary rounded-0 col-5 p-0"
             style={{ backgroundColor: '#2196f3' }}

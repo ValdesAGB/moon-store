@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Banner from './components/Banner'
-import Navbarre from './components/Navbarre'
+import Footer from './components/Footer'
+//import Navbarre from './components/Navbarre'
 import ShoppingList from './components/ShoppingList'
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
   return (
     <React.Fragment>
       <Banner cart={cart} setCart={setCart} />
-      <Navbarre />
+      {/*<Navbarre />*/}
       <ShoppingList cart={cart} setCart={setCart} />
+      <Footer />
     </React.Fragment>
   )
 }
